@@ -69,23 +69,46 @@
                 </svg>
             </button>
             <h2>Оставьте свои данные, мы вам перезвоним</h2>
-            <form>
-                <label for="user-name">Имя</label>
-                <input type="text" name="user-name" id="user-name" autofocus>
+            <form autocomplete="off">
+                <div class="field-with-icon">
+                  <label  class="form-field">Имя
+                    <input type="text" name="user-name" placeholder="" autofocus>
+                  </label>
+                  <svg class=modal-icon width=13 height=13>
+                    <use href="./images/symbol-defs.svg#icon-modal-icon1"></use>
+                  </svg>
+                </div>
 
-                <label for="tel">Телефон</label>
-                <input type="tel" name="tel" id="tel">
+                <div class="field-with-icon">
+                  <label  class="form-field">Телефон
+                    <input type="tel" name="tel" placeholder="">
+                  </label>
+                  <svg class=modal-icon width=13 height=13>
+                    <use href="./images/symbol-defs.svg#icon-modal-icon2"></use>
+                  </svg>
+                </div>
 
-                <label for="mail">Почта</label>
-                <input type="email" name="mail" id="mail">
+                <div class="field-with-icon">
+                  <label  class="form-field">Почта
+                    <input type="email" name="mail" placeholder="">
+                  </label>
+                  <svg class=modal-icon width=13 height=13>
+                    <use href="./images/symbol-defs.svg#icon-modal-icon3"></use>
+                  </svg>
+                </div>
 
-                <label for="comment">Комментарий</label>
-                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>   
+                <div>
+                  <label  class="form-field">Комментарий
+                    <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Введите текст"></textarea> 
+                  </label>  
+                </div>
 
-                <input type="checkbox" name="policy" id="policy">
-                <label for="policy">Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></label>
+                <div class="policy">
+                  <input type="checkbox" name="policy" id="policy">
+                  <label for="policy"><span class="policy-terms">Соглашаюсь с рассылкой и принимаю </span><a href="" class="policy-link">Условия договора</a></label>
+                </div>
 
-                <button type="submit">Отправить</button>
+                <button class="button-submit" type="submit">Отправить</button>
             </form>
           </div>
         </div>
@@ -427,7 +450,7 @@
             </div>
             <div class="email-form">
                 <span>Подпишитесь на рассылку</span> 
-                <form>
+                <form autocomplete="off">
                     <input type="email" name="mail" placeholder="E-mail">
                     <button type="submit">Подписаться
                         <svg width=24 height=24>
