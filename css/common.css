@@ -13,11 +13,13 @@ body {
 }
 
 .container {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   max-width: 1230px;
   padding-left: 15px;
   padding-right: 15px;
+  outline: red 1px solid;
 }
 
 /*Шапка сайта*/
@@ -313,8 +315,10 @@ a {
   fill: var(--accent-color);
 }
 
-.policy-terms,
+.policy-label,
 .policy-link{
+  display: flex;
+  align-items: center;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -326,6 +330,56 @@ a {
 .policy-link{
   text-decoration: underline;
   color: var(--accent-color);
+}
+
+.checkbox-policy{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.checkbox-policy:checked + .policy-label::before{
+  display: inline-block;
+  content: " ";
+  width: 16px;
+  height: 15px;
+  margin-right: 8.4px;
+
+  background-color: var(--accent-color);
+  background-image: url(../images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid var(--accent-color);
+  border-radius: 1px;
+  
+}
+
+.checkbox-policy:focus + .policy-label::before{
+  border: 2px solid var(--accent-color);
+}
+
+.policy-label::before{
+  display: inline-block;
+  content: " ";
+  width: 16px;
+  height: 15px;
+  margin-right: 8.4px;
+  background-color: transparent;
+  border: 2px solid var(--title-text-color);
+  border-radius: 1px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.policy-field{
+  display: flex;
+  justify-content: center;
 }
 
 .button-submit{
@@ -626,6 +680,8 @@ a {
   display: flex;
 }
 
+.left-side-footer{margin-left: 15px;}
+
 .bottom-logo {
   color: #ffffff;
 }
@@ -719,6 +775,9 @@ a {
 }
 
 .email-form{
+    position: absolute;
+    top: 0;
+    right: 30px;
     margin-top: 12px;
 }
 
@@ -734,7 +793,7 @@ a {
     width: 358px;
     height: 50px;
 
-    background-color: var(--primary-background-color);
+    background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-sizing: border-box;
     border-radius: 4px;
