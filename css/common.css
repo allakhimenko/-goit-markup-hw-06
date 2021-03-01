@@ -261,9 +261,6 @@ a {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  background-image: url(../images/close.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
   background-size: 11px;
   cursor: pointer;
 }
@@ -552,13 +549,19 @@ a {
 }
 
 /*Правая часть футера с ссылками на соц. сети*/
+.right-side{
+    display: flex;
+}
+
 .right-side-footer {
   margin-left: 70px;
+  margin-right: 93px;
   margin-top: 12px;
   display: block;
 }
 
-.right-side-footer span {
+.right-side-footer span,
+.email-form span {
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -569,6 +572,7 @@ a {
 }
 
 .soc-links {
+  margin-top: 20px;
   padding-left: 0;
   display: flex;
   justify-content: center;
@@ -604,6 +608,52 @@ a {
 .soc-links li:not(:last-child) {
   margin-right: 10px;
 }
+
+.email-form{
+    margin-top: 12px;
+}
+
+.email-form form{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.email-form input{
+    display: block;
+    margin-right: 12px;
+    width: 358px;
+    height: 50px;
+
+    background-color: var(--primary-background-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.email-form button{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    max-height: 50px;
+    padding: 10px 29px;
+
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 4px;
+     
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--primary-white-color);
+}
+
+.email-form svg{margin-left: 10px;}
 
 /*Портфолио*/
 .portfolio {
