@@ -212,6 +212,7 @@ a {
   cursor: pointer;
 }
 
+/*Модальное окно*/
 .backdrop {
   position: fixed;
   z-index: 1;
@@ -263,11 +264,8 @@ a {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
 }
-.field-with-icon{
-  position: relative;
-}
 
-.form-field{
+.form-field-label{
   display: flex;
   flex-direction: column;
   margin-bottom: 4px;
@@ -283,12 +281,16 @@ a {
 .form-field textarea{
   display: block;
   height: 40px;
+  width: 100%;
   margin-bottom: 10px;
   padding-left: 42px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: none;
   cursor: pointer;
+
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field textarea{
@@ -296,6 +298,11 @@ a {
   padding: 12px 16px;
   margin-bottom: 20px;
   resize: none;
+
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
 }
 
 .form-field input:focus,
@@ -304,18 +311,73 @@ a {
   border: 1px solid var(--accent-color);
 }
 
+.form-field-icon{
+  position: relative;
+}
+
 .modal-icon{
   position: absolute;
-  top: 28px;
+  top: 50%;
   left: 14px;
+  fill: #000000;
+  transform: translateY(-50%);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.field-with-icon:focus-within .modal-icon{
+.form-field:focus-within .modal-icon{
   fill: var(--accent-color);
+  transform: translateY(-50%);
 }
 
-.policy-label,
-.policy-link{
+/*ЧЕКБОКС*/
+.checkbox-field{ /*Выравнивание поля по горизонтали*/
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.checkbox-input{  /*Скрыли браузерный чекбокс*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.checkbox-label::before{ /*Неактивный чекбокс - темная рамка*/
+  display: inline-block;
+  content: " ";
+  width: 16px;
+  height: 15px;
+  margin-right: 8.4px;
+
+  background-color: transparent;
+  border: 2px solid var(--title-text-color);
+  border-radius: 1px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.checkbox-input:checked + .checkbox-label::before{ /*Активный чекбокс*/
+  background-color: var(--accent-color);
+  background-image: url(../images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid var(--accent-color);
+}
+
+.checkbox-input:focus + .checkbox-label::before{ /*Чекбокс при фокусе - синяя рамка*/
+  border: 2px solid var(--accent-color);
+}
+
+.checkbox-label,
+.policy-link{ /*Оформление текста*/
   display: flex;
   align-items: center;
   font-style: normal;
@@ -327,59 +389,9 @@ a {
   cursor: pointer;
 }
 
-.policy-link{
+.policy-link{ /*Оформление ссылки*/
   text-decoration: underline;
   color: var(--accent-color);
-}
-
-.checkbox-policy{
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-}
-
-.checkbox-policy:checked + .policy-label::before{
-  display: inline-block;
-  content: " ";
-  width: 16px;
-  height: 15px;
-  margin-right: 8.4px;
-
-  background-color: var(--accent-color);
-  background-image: url(../images/icon-check.svg);
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-position: center;
-  background-size: cover;
-  border: 2px solid var(--accent-color);
-  border-radius: 1px;
-  cursor: pointer;
-}
-
-.checkbox-policy:focus + .policy-label::before{
-  border: 2px solid var(--accent-color);
-}
-
-.policy-label::before{
-  display: inline-block;
-  content: " ";
-  width: 16px;
-  height: 15px;
-  margin-right: 8.4px;
-  background-color: transparent;
-  border: 2px solid var(--title-text-color);
-  border-radius: 1px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.policy-field{
-  display: flex;
-  justify-content: center;
 }
 
 .button-submit{

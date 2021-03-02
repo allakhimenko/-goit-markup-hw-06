@@ -68,50 +68,51 @@
                     <use href="./images/symbol-defs.svg#icon-close-button"></use>
                 </svg>
             </button>
+
+            <!--МОДАЛЬНОЕ ОКНО-->
             <h2>Оставьте свои данные, мы вам перезвоним</h2>
+            <!--ФОРМА МОДАЛЬНОГО ОКНА-->
             <form autocomplete="off">
-                <div class="field-with-icon">
-                  <label  class="form-field">
-                  Имя
-                    <input type="text" name="user-name" placeholder="" autofocus>
-                  </label>
-                  <svg class=modal-icon width=13 height=13>
-                    <use href="./images/symbol-defs.svg#icon-modal-icon1"></use>
-                  </svg>
+                <div class="form-field">
+                  <label for="user" class="form-field-label">Имя</label>
+                  <div class="form-field-icon">
+                    <input type="text" name="user-name" id="user" placeholder="" autofocus>
+                    <svg class=modal-icon width=13 height=13>
+                      <use href="./images/symbol-defs.svg#icon-modal-icon1"></use>
+                    </svg>
+                  </div>
                 </div>
 
-                <div class="field-with-icon">
-                  <label  class="form-field">
-                  Телефон
-                    <input type="tel" name="tel" placeholder="">
-                  </label>
-                  <svg class=modal-icon width=13 height=13>
-                    <use href="./images/symbol-defs.svg#icon-modal-icon2"></use>
-                  </svg>
+                <div class="form-field">
+                  <label for="tel" class="form-field-label">Телефон</label>
+                  <div class="form-field-icon">
+                    <input type="tel" name="tel" id="tel" placeholder="">
+                    <svg class=modal-icon width=13 height=13>
+                      <use href="./images/symbol-defs.svg#icon-modal-icon2"></use>
+                    </svg>
+                  </div>
                 </div>
 
-                <div class="field-with-icon">
-                  <label  class="form-field">
-                  Почта
-                    <input type="email" name="mail" placeholder="">
-                  </label>
-                  <svg class=modal-icon width=13 height=13>
-                    <use href="./images/symbol-defs.svg#icon-modal-icon3"></use>
-                  </svg>
+                <div class="form-field">
+                  <label for="mail" class="form-field-label">Почта</label>
+                  <div class="form-field-icon">
+                    <input type="email" name="mail" id="mail" placeholder="">
+                    <svg class=modal-icon width=13 height=13>
+                      <use href="./images/symbol-defs.svg#icon-modal-icon3"></use>
+                    </svg>
+                  </div>
                 </div>
-
-                <div>
-                  <label  class="form-field">
-                  Комментарий
-                    <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Введите текст"></textarea> 
-                  </label>  
+                <!--Комментарии-->
+                <div class="form-field">
+                  <label for="comment" class="form-field-label">Комментарий</label> 
+                  <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Введите текст"></textarea>   
                 </div>
-
-                <div class="policy-field">
-                  <input type="checkbox" name="policy" id="policy" class="checkbox-policy">
-                  <label for="policy" class="policy-label">Соглашаюсь с рассылкой и принимаю&ensp;<a href="" class="policy-link">Условия договора</a></label>
+                <!--Чекбокс-->
+                <div class="checkbox-field">
+                  <input type="checkbox" name="policy" id="policy" class="checkbox-input">
+                  <label for="policy" class="checkbox-label">Соглашаюсь с рассылкой и принимаю&ensp;<a href="" class="policy-link">Условия договора</a></label>
                 </div>
-
+                <!--Кнопка ОТПРАВИТЬ-->
                 <button class="button-submit" type="submit">Отправить</button>
             </form>
           </div>
