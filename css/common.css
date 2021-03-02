@@ -251,7 +251,7 @@ a {
   border-radius: 4px;
 }
 
-.modal h2{
+.modal h2 {
   margin: 0;
   margin-bottom: 12px;
 
@@ -263,7 +263,7 @@ a {
   color: var(--title-text-color);
 }
 
-.form-field-label{
+.form-field-label {
   display: flex;
   flex-direction: column;
   margin-bottom: 4px;
@@ -276,7 +276,7 @@ a {
 }
 
 .form-field input,
-.form-field textarea{
+.form-field textarea {
   display: block;
   height: 40px;
   width: 100%;
@@ -288,10 +288,11 @@ a {
   outline: none;
   cursor: pointer;
 
-  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field textarea{
+.form-field textarea {
   height: 120px;
   padding: 12px 16px;
   margin-bottom: 20px;
@@ -304,38 +305,41 @@ a {
 }
 
 .form-field input:focus,
-.form-field textarea:focus{
+.form-field textarea:focus {
   outline: none;
   border: 1px solid var(--accent-color);
 }
 
-.form-field-icon{
+.form-field-icon {
   position: relative;
 }
 
-.modal-icon{
+.modal-icon {
   position: absolute;
   top: 50%;
   left: 14px;
   fill: #000000;
   transform: translateY(-50%);
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field:focus-within .modal-icon{
+.form-field:focus-within .modal-icon {
   fill: var(--accent-color);
   transform: translateY(-50%);
 }
 
 /*ЧЕКБОКС*/
-.checkbox-field{ /*Выравнивание поля по горизонтали*/
+.checkbox-field {
+  /*Выравнивание поля по горизонтали*/
   display: flex;
   justify-content: center;
   text-align: center;
 }
 
-.checkbox-input{  /*Скрыли браузерный чекбокс*/
+.checkbox-input {
+  /*Скрыли браузерный чекбокс*/
   position: absolute;
   width: 1px;
   height: 1px;
@@ -346,7 +350,8 @@ a {
   clip: rect(0 0 0 0);
 }
 
-.checkbox-label::before{ /*Неактивный чекбокс - темная рамка*/
+.checkbox-label::before {
+  /*Неактивный чекбокс - темная рамка*/
   display: inline-block;
   content: " ";
   width: 16px;
@@ -356,11 +361,13 @@ a {
   background-color: transparent;
   border: 2px solid var(--title-text-color);
   border-radius: 1px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
-.checkbox-input:checked + .checkbox-label::before{ /*Активный чекбокс*/
+.checkbox-input:checked + .checkbox-label::before {
+  /*Активный чекбокс*/
   background-color: var(--accent-color);
   background-image: url(../images/icon-check.svg);
   background-repeat: no-repeat;
@@ -370,12 +377,14 @@ a {
   border: 2px solid var(--accent-color);
 }
 
-.checkbox-input:focus + .checkbox-label::before{ /*Чекбокс при фокусе - синяя рамка*/
+.checkbox-input:focus + .checkbox-label::before {
+  /*Чекбокс при фокусе - синяя рамка*/
   border: 2px solid var(--accent-color);
 }
 
 .checkbox-label,
-.policy-link{ /*Оформление текста*/
+.policy-link {
+  /*Оформление текста*/
   display: flex;
   align-items: center;
   font-style: normal;
@@ -387,12 +396,13 @@ a {
   cursor: pointer;
 }
 
-.policy-link{ /*Оформление ссылки*/
+.policy-link {
+  /*Оформление ссылки*/
   text-decoration: underline;
   color: var(--accent-color);
 }
 
-.button-submit{
+.button-submit {
   display: block;
   margin: auto;
   width: 200px;
@@ -406,7 +416,7 @@ a {
   border-radius: 4px;
 
   font-style: normal;
-  font-weight: 700 ;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   text-align: center;
@@ -434,7 +444,7 @@ a {
 }
 
 .button-closed:hover,
-.button-closed:focus{
+.button-closed:focus {
   fill: var(--accent-color);
 }
 
@@ -722,8 +732,8 @@ a {
 }
 
 /*Правая часть футера с ссылками на соц. сети*/
-.right-side{
-    display: flex;
+.right-side {
+  display: flex;
 }
 
 .right-side-footer {
@@ -782,56 +792,58 @@ a {
   margin-right: 10px;
 }
 
-.email-form{
-    position: absolute;
-    top: 0;
-    right: 0px;
-    margin-top: 12px;
+.email-form {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  margin-top: 12px;
 }
 
-.email-form form{
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
+.email-form form {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.email-form input{
-    display: block;
-    margin-right: 12px;
-    padding-left: 16px;
-    width: 358px;
-    height: 50px;
+.email-form input {
+  display: block;
+  margin-right: 12px;
+  padding-left: 16px;
+  width: 358px;
+  height: 50px;
 
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-sizing: border-box;
-    border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  border-radius: 4px;
 
-    color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.email-form button{
-    display: flex;
-    align-items: center;
-    width: 200px;
-    max-height: 50px;
-    padding: 10px 29px;
+.email-form button {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  max-height: 50px;
+  padding: 10px 29px;
 
-    background-color: var(--accent-color);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border: none;
-    border-radius: 4px;
-     
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.87;
-    text-align: center;
-    letter-spacing: 0.06em;
-    color: var(--primary-white-color);
-    cursor: pointer;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--primary-white-color);
+  cursor: pointer;
 }
 
-.email-form svg{margin-left: 10px;}
+.email-form svg {
+  margin-left: 10px;
+}
 
 /*Портфолио*/
 .portfolio {
